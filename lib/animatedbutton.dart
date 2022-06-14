@@ -115,7 +115,7 @@ class NeuBotton extends StatelessWidget {
                   ),
                   SizedBox(height: 5,),
                   Text(
-                    'Barberia',
+                    'Barberia/Tatuador',
                     style: TextStyle(
                         color: isPressed ? Colors.grey[400] : Colors.amber,
                         fontFamily: 'CrimsonText',
