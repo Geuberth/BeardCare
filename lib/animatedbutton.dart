@@ -44,7 +44,7 @@ class NeuBotton extends StatelessWidget {
                         ),
 
                         //Light Shadow at top left
-                        BoxShadow(
+                        const BoxShadow(
                           color: Colors.white,
                           offset: Offset(-6, -6),
                           blurRadius: 9,
@@ -98,7 +98,7 @@ class NeuBotton extends StatelessWidget {
                           ),
 
                           //Light Shadow at top left
-                          BoxShadow(
+                          const BoxShadow(
                             color: Colors.white,
                             offset: Offset(-6, -6),
                             blurRadius: 9,

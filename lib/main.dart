@@ -1,3 +1,4 @@
+import 'package:beardcare/WorkerProfile.dart';
 import 'package:flutter/material.dart';
 import 'ChooseScreen.dart';
 import 'LoginScreen.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
+        '/WorkerProfile': (context) => WorkerProfile(),
         '/LoginClient': (context) => LoginScreen(userType: 'Client',),
         '/LoginBarber': (context) => LoginScreen(userType: 'Barber',),
         '/': (context) => ChooseScreen()

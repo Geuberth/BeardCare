@@ -155,10 +155,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState?.save();
-                        print(cellPhone);
-                        print(Email);
-                        print('hola');
-                        print(Password);
                       }
                     },
                     child: const Text('Registrarse'),
