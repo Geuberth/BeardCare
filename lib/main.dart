@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.amber,
         //colorScheme: ColorScheme(primary: ,secondary: ,error: ,background: ,brightness: ,onPrimary: ,onSecondary: ,onSurface: ,onError: ),
       ),
-      initialRoute: '/',
+      initialRoute: '/WorkerProfile',
       routes: {
         '/WorkerProfile': (context) => WorkerProfile(),
         '/LoginClient': (context) => LoginScreen(userType: 'Client',),
