@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'ChooseScreen.dart';
 import 'LoginScreen.dart';
-import 'barber_list.dart';
 import 'WorkerProfile.dart';
+import 'barber_list.dart';
+import 'worker_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         '/LoginBarber': (context) => LoginScreen(userType: 'Barber',),
         '/Choose': (context) => ChooseScreen(),
         '/BaberList': (context) => BarberListPage(),
-        '/': (context) => WorkerProfile(),
+        '/WorkerForm': (context) => WorkerFormPage(),
+        '/': (context) => ChooseScreen(),
       },
     );
   }

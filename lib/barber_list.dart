@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Barber {
   String name;
   String description;
+  int calification = 0;
 
-  Barber(this.name, this.description);
+  Barber(this.name, this.description, this.calification);
 }
 
 class BarberListPage extends StatefulWidget {
@@ -16,15 +17,20 @@ class BarberListPage extends StatefulWidget {
 
 class _BarberListPageState extends State<BarberListPage> {
   List<Barber> barbers = [
-    Barber('Jhon', 'The new instinct'),
-    Barber('Raul', 'Kiss my ass'),
+    Barber('Jhon', 'The new instinct', 5),
+    Barber('Raul', 'Kiss my ass', 4),
+    Barber('Ramiro', 'polvora', 3),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Barber List'),
+        backgroundColor: Colors.black87,
+        title: Text(
+          'Barber List',
+          style: TextStyle(color: Colors.amber),
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -81,12 +87,22 @@ class _BarberListPageState extends State<BarberListPage> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [
-                            Icon(Icons.star),
-                            Icon(Icons.star),
-                            Icon(Icons.star),
-                            Icon(Icons.star),
-                            Icon(Icons.star_border_outlined),
+                          children: [
+                            (barbers[index].calification > 0)
+                                ? Icon(Icons.star)
+                                : Icon(Icons.star_border_outlined),
+                            (barbers[index].calification > 1)
+                                ? Icon(Icons.star)
+                                : Icon(Icons.star_border_outlined),
+                            (barbers[index].calification > 2)
+                                ? Icon(Icons.star)
+                                : Icon(Icons.star_border_outlined),
+                            (barbers[index].calification > 3)
+                                ? Icon(Icons.star)
+                                : Icon(Icons.star_border_outlined),
+                            (barbers[index].calification > 4)
+                                ? Icon(Icons.star)
+                                : Icon(Icons.star_border_outlined),
                           ],
                         ),
                       ],
@@ -96,13 +112,17 @@ class _BarberListPageState extends State<BarberListPage> {
               },
             ),
           ),
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shop),
-              label: 'Shop',
-            ),
-          ]),
+          BottomNavigationBar(
+              backgroundColor: Colors.black87,
+              selectedItemColor: Colors.amber,
+              unselectedItemColor: Colors.white,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.shop),
+                  label: 'Shop',
+                ),
+              ]),
         ],
       ),
     );
