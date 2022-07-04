@@ -5,7 +5,7 @@ class User extends ChangeNotifier {
 
   String get username => _username;
 
-  set username(String newValue){
+  set username(String newValue) {
     _username = newValue;
     notifyListeners();
   }

@@ -1,4 +1,4 @@
-import 'package:beardcare/models/User.dart';
+import 'package:beardcare/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

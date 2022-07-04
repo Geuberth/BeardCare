@@ -1,11 +1,12 @@
-import 'package:beardcare/models/User.dart';
+import 'package:beardcare/models/user.dart';
+import 'package:beardcare/providers/barbers_provider.dart';
+import 'package:beardcare/screens/barber_list.dart';
+import 'package:beardcare/screens/choose_screen.dart';
+import 'package:beardcare/screens/login_screen.dart';
+import 'package:beardcare/screens/worker_form.dart';
+import 'package:beardcare/screens/worker_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'screens/choose_screen.dart';
-import 'screens/login_screen.dart';
-import 'screens/worker_profile.dart';
-import 'screens/barber_list.dart';
-import 'screens/worker_form.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => User()),
+        ChangeNotifierProvider(create: (context) => BarbersProvider()),
       ],
       child: MaterialApp(
         title: 'Beard&Care',
