@@ -1,10 +1,7 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart';
 
 // definition of the widget Login screen
 class LoginScreen extends StatefulWidget {
@@ -21,8 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   List<XFile> imageFileList = [];
   String? cellPhone = '';
-  String? Email = '';
-  String? Password = '';
+  String? email = '';
+  String? password = '';
 
   Future pickImage(BuildContext context) async {
     final List<XFile>? images = await ImagePicker().pickMultiImage();
@@ -44,8 +41,6 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextFormField(
                           onSaved: (String? value) {
                             setState(() {
-                              Email = value;
+                              email = value;
                             });
                           },
                           keyboardType: TextInputType.emailAddress,
@@ -113,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextFormField(
                           onSaved: (String? value) {
                             setState(() {
-                              Password = value;
+                              password = value;
                             });
                           },
                           keyboardType: TextInputType.visiblePassword,
@@ -136,18 +131,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                   ),
-                  if(widget.userType == 'Barber')
+                  if (widget.userType == 'Barber')
                     ElevatedButton.icon(
-                      icon: Icon(Icons.camera),
-                      label: Text('Pick Photos'),
+                      icon: const Icon(Icons.camera),
+                      label: const Text('Pick Photos'),
                       onPressed: () {
                         pickImage(context);
                       },
                       style: ElevatedButton.styleFrom(primary: Colors.amber),
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   MaterialButton(
                     color: Colors.amber,
                     padding:

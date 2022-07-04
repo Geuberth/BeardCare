@@ -82,7 +82,7 @@ class _WorkerProfile extends State<WorkerProfile> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
+                children: const [
                   Text('Danny Peluquero',
                       style: TextStyle(
                           fontFamily: 'CrimsonText',
@@ -109,11 +109,12 @@ class _WorkerProfile extends State<WorkerProfile> {
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 7, vertical: 5),
                       decoration: BoxDecoration(border: Border.all(width: 0.5)),
                       height: 150,
                       width: 255,
-                      child: Text(
+                      child: const Text(
                           'Agregar la descripcion recibida en el worker_form',
                           style: TextStyle(
                               fontSize: 16, fontFamily: 'CrimsonText')),
@@ -133,11 +134,11 @@ class _WorkerProfile extends State<WorkerProfile> {
                   children: [
                     Expanded(
                         child: Container(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 7, vertical: 5),
                             decoration:
                                 BoxDecoration(border: Border.all(width: 0.5)),
-                            child: Text(
+                            child: const Text(
                                 'Agregar los precios referenciados del worker_screen_form'))),
                   ],
                 ),
@@ -152,7 +153,7 @@ class _WorkerProfile extends State<WorkerProfile> {
                   InkWell(
                     child: TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Cotizar',
                         style: TextStyle(
                             fontSize: 18,
@@ -165,7 +166,7 @@ class _WorkerProfile extends State<WorkerProfile> {
                   InkWell(
                     child: TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Pagar',
                         style: TextStyle(
                             fontSize: 18,

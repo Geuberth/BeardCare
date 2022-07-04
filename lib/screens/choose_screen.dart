@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'animatedbutton.dart';
-import 'LoginScreen.dart';
+import 'animated_button.dart';
 
 class ChooseScreen extends StatefulWidget {
   static String id = 'Choose';
@@ -11,7 +10,6 @@ class ChooseScreen extends StatefulWidget {
 }
 
 class _ChooseScreenState extends State<ChooseScreen> {
-  @override
   bool isPressed = false;
   bool isPressed1 = false;
 
@@ -49,6 +47,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(

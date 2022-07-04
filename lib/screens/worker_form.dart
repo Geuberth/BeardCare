@@ -14,7 +14,8 @@ class _WorkerFormPageState extends State<WorkerFormPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: Text('Barber Form', style: TextStyle(color: Colors.amber)),
+        title: const Text('Barber Form',
+            style: TextStyle(color: Colors.amber)),
       ),
       body: Form(
         child: Column(
@@ -34,7 +35,7 @@ class _WorkerFormPageState extends State<WorkerFormPage> {
                 labelText: 'About you',
               ),
             ),
-            DataTable(columns: [
+            DataTable(columns: const [
               DataColumn(
                   label: Text(
                 'Style',
@@ -47,43 +48,43 @@ class _WorkerFormPageState extends State<WorkerFormPage> {
               )),
             ], rows: [
               DataRow(cells: [
-                DataCell(Text('Beard')),
-                DataCell(Container(
+                const DataCell(Text('Beard')),
+                DataCell(SizedBox(
                   width: 200,
                   height: 50,
                   child: TextFormField(
                     inputFormatters: [
                       ThousandsSeparatorInputFormatter(),
                     ],
-                    decoration: InputDecoration(hintText: '10000'),
+                    decoration: const InputDecoration(hintText: '10000'),
                     keyboardType: TextInputType.number,
                   ),
                 ))
               ]),
               DataRow(cells: [
-                DataCell(Text('The Sevens')),
-                DataCell(Container(
+                const DataCell(Text('The Sevens')),
+                DataCell(SizedBox(
                   width: 200,
                   height: 50,
                   child: TextFormField(
                     inputFormatters: [
                       ThousandsSeparatorInputFormatter(),
                     ],
-                    decoration: InputDecoration(hintText: '10000'),
+                    decoration: const InputDecoration(hintText: '10000'),
                     keyboardType: TextInputType.number,
                   ),
                 ))
               ]),
               DataRow(cells: [
-                DataCell(Text('Brows')),
-                DataCell(Container(
+                const DataCell(Text('Brows')),
+                DataCell(SizedBox(
                   width: 200,
                   height: 50,
                   child: TextFormField(
                     inputFormatters: [
                       ThousandsSeparatorInputFormatter(),
                     ],
-                    decoration: InputDecoration(hintText: '10000'),
+                    decoration: const InputDecoration(hintText: '10000'),
                     keyboardType: TextInputType.number,
                   ),
                 ))
@@ -96,7 +97,8 @@ class _WorkerFormPageState extends State<WorkerFormPage> {
                 children: [
                   MaterialButton(
                     color: Colors.amber,
-                    padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 80, vertical: 5),
                     onPressed: () {},
                     child: const Text('Create'),
                   ),
@@ -117,7 +119,7 @@ class ThousandsSeparatorInputFormatter extends TextInputFormatter {
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
     // Short-circuit if the new value is empty
-    if (newValue.text.length == 0) {
+    if (newValue.text.isEmpty) {
       return newValue.copyWith(text: '');
     }
 
@@ -138,8 +140,9 @@ class ThousandsSeparatorInputFormatter extends TextInputFormatter {
 
       String newString = '';
       for (int i = chars.length - 1; i >= 0; i--) {
-        if ((chars.length - 1 - i) % 3 == 0 && i != chars.length - 1)
+        if ((chars.length - 1 - i) % 3 == 0 && i != chars.length - 1) {
           newString = separator + newString;
+        }
         newString = chars[i] + newString;
       }
 

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 class NeuBotton extends StatelessWidget {
-  final onTap;
-  final onTap1;
-  final redirectP;
-  final redirectB;
+  dynamic onTap;
+  dynamic onTap1;
+  dynamic redirectP;
+  dynamic redirectB;
   bool isPressed;
   bool isPressed1;
 
   NeuBotton(
-      {this.redirectB,
+      {Key? key, this.redirectB,
       this.redirectP,
       this.onTap1,
       this.onTap,
       required this.isPressed,
-      required this.isPressed1});
+      required this.isPressed1}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +23,7 @@ class NeuBotton extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             height: 180,
             width: 180,
             onEnd: redirectP,
@@ -38,7 +38,7 @@ class NeuBotton extends StatelessWidget {
                         //Dark shadow at bottom right
                         BoxShadow(
                           color: Colors.grey.shade500,
-                          offset: Offset(6, 6),
+                          offset: const Offset(6, 6),
                           blurRadius: 9,
                           spreadRadius: 1,
                         ),
@@ -53,13 +53,13 @@ class NeuBotton extends StatelessWidget {
                       ]),
             child: Column(
               children: [
-                SizedBox(height: 8,),
+                const SizedBox(height: 8,),
                 Icon(
                   Icons.person,
                   size: 130,
                   color: isPressed ? Colors.grey[400] : Colors.amber,
                 ),
-                SizedBox(height: 5,),
+                const SizedBox(height: 5,),
                 Text(
                   'Cliente',
                   style: TextStyle(
@@ -77,7 +77,7 @@ class NeuBotton extends StatelessWidget {
         GestureDetector(
           onTap: onTap1,
           child: AnimatedContainer(
-              duration: Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 200),
               height: 180,
               width: 180,
               onEnd: redirectB,
@@ -92,7 +92,7 @@ class NeuBotton extends StatelessWidget {
                           //Dark shadow at bottom right
                           BoxShadow(
                             color: Colors.grey.shade500,
-                            offset: Offset(6, 6),
+                            offset: const Offset(6, 6),
                             blurRadius: 9,
                             spreadRadius: 1,
                           ),
@@ -107,13 +107,13 @@ class NeuBotton extends StatelessWidget {
                         ]),
               child: Column(
                 children: [
-                  SizedBox(height: 8,),
+                  const SizedBox(height: 8,),
                   Icon(
                     Icons.assignment_ind,
                     size: 130,
                     color: isPressed1 ? Colors.grey[400] : Colors.amber,
                   ),
-                  SizedBox(height: 5,),
+                  const SizedBox(height: 5,),
                   Text(
                     'Barberia/Tatuador',
                     style: TextStyle(
