@@ -126,14 +126,14 @@ class _WorkerProfile extends State<WorkerProfile> {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
-              child: IntrinsicHeight(
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  //crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Expanded(
                         child: Container(
+                          height: 350,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 7, vertical: 5),
                             decoration:
@@ -142,7 +142,6 @@ class _WorkerProfile extends State<WorkerProfile> {
                                 'Agregar los precios referenciados del worker_screen_form'))),
                   ],
                 ),
-              ),
             ),
             Expanded(
               child: Row(

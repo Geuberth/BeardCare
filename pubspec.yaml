@@ -39,6 +39,7 @@ dependencies:
   path: ^1.8.1
   provider: ^6.0.0
   sqflite: ^2.0.2+1
+  http: ^0.13.4
 
 
 dev_dependencies:
@@ -71,6 +72,8 @@ flutter:
     - Assets/beardL.png
     - Assets/LogoBeard.png
     - Assets/triangleLoading.gif
+    - Assets/campLoad.gif
+    - Assets/Pay_success.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

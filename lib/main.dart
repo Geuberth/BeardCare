@@ -1,6 +1,8 @@
 import 'package:beardcare/models/user.dart';
 import 'package:beardcare/providers/barbers_provider.dart';
 import 'package:beardcare/screens/barber_list.dart';
+import 'package:beardcare/screens/payment.dart';
+import 'package:beardcare/screens/success_screen.dart';
 import 'package:beardcare/screens/choose_screen.dart';
 import 'package:beardcare/screens/login_screen.dart';
 import 'package:beardcare/screens/worker_form.dart';
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/WorkerProfile': (context) => const WorkerProfile(),
+          '/PaymentMethods': (context) => const Payment(),
+          '/SuccessPayment': (context) => const Success(),
           '/LoginClient': (context) => const LoginScreen(
                 userType: 'Client',
               ),
@@ -40,7 +44,7 @@ class MyApp extends StatelessWidget {
           '/Choose': (context) => const ChooseScreen(),
           '/BarberList': (context) => const BarberListPage(),
           '/WorkerForm': (context) => const WorkerFormPage(),
-          '/': (context) => const ChooseScreen(),
+          '/': (context) => const WorkerProfile(),
         },
       ),
     );
