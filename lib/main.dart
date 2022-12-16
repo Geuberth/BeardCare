@@ -4,7 +4,7 @@ import 'package:beardcare/screens/barber_list.dart';
 import 'package:beardcare/screens/payment.dart';
 import 'package:beardcare/screens/success_screen.dart';
 import 'package:beardcare/screens/choose_screen.dart';
-import 'package:beardcare/screens/login_screen.dart';
+import 'package:beardcare/screens/register_screen.dart';
 import 'package:beardcare/screens/worker_form.dart';
 import 'package:beardcare/screens/worker_profile.dart';
 import 'package:flutter/material.dart';
@@ -35,16 +35,16 @@ class MyApp extends StatelessWidget {
           '/WorkerProfile': (context) => const WorkerProfile(),
           '/PaymentMethods': (context) => const Payment(),
           '/SuccessPayment': (context) => const Success(),
-          '/LoginClient': (context) => const LoginScreen(
+          '/RegisterClient': (context) => const RegisterScreen(
                 userType: 'Client',
               ),
-          '/LoginBarber': (context) => const LoginScreen(
+          '/RegisterBarber': (context) => const RegisterScreen(
                 userType: 'Barber',
               ),
           '/Choose': (context) => const ChooseScreen(),
           '/BarberList': (context) => const BarberListPage(),
           '/WorkerForm': (context) => const WorkerFormPage(),
-          '/': (context) => const WorkerProfile(),
+          '/': (context) => const RegisterScreen(userType:'Barber'),
         },
       ),
     );

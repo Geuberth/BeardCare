@@ -4,21 +4,24 @@ import 'package:intl_phone_field/phone_number.dart';
 import 'package:image_picker/image_picker.dart';
 
 // definition of the widget Login screen
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   final String? userType;
   static String id = 'Login';
-  const LoginScreen({Key? key, required this.userType}) : super(key: key);
+  const RegisterScreen({Key? key, required this.userType}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
 //Login screen
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   List<XFile> imageFileList = [];
   String? cellPhone = '';
   String? email = '';
+  String? userName = '';
+  String? firstName = '';
+  String? lastName = '';
   String? password = '';
 
   Future pickImage(BuildContext context) async {
@@ -42,6 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         Image.asset(
                           'Assets/beardL.png',
-                          height: 300,
+                          height: 250,
                         ),
                         const SizedBox(
                           height: 5,
@@ -88,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                         const SizedBox(
-                          height: 26,
+                          height: 17,
                         ),
                         IntlPhoneField(
                           initialCountryCode: 'CO',
@@ -102,8 +106,47 @@ class _LoginScreenState extends State<LoginScreen> {
                               hintText: 'Phone Number',
                               border: InputBorder.none),
                         ),
+                        TextFormField(
+                          onSaved: (String? value) {
+                            setState(() {
+                              userName = value;
+                            });
+                          },
+                          keyboardType: TextInputType.text,
+                          decoration: const InputDecoration(
+                            icon: Icon(Icons.person),
+                            labelText: 'Nick Name',
+                          ),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'No ingresaste nick name';
+                            }
+                            return null;
+                          },
+                        ),
                         const SizedBox(
-                          height: 5,
+                          height: 8,
+                        ),
+                        TextFormField(
+                          onSaved: (String? value) {
+                            setState(() {
+                              firstName = value;
+                            });
+                          },
+                          keyboardType: TextInputType.text,
+                          decoration: const InputDecoration(
+                            icon: Icon(Icons.person),
+                            labelText: 'First Name',
+                          ),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'No ingresaste nick name';
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 8,
                         ),
                         TextFormField(
                           onSaved: (String? value) {
