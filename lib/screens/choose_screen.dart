@@ -31,7 +31,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
 
   void redirectPerson() {
     if (isPressed == true) {
-      Navigator.pushNamed(context, '/LoginClient');
+      Navigator.pushNamed(context, '/RegisterClient');
     }
     setState(() {
       isPressed = false;
@@ -40,7 +40,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
 
   void redirectBarber() {
     if (isPressed1 == true) {
-      Navigator.pushNamed(context, '/LoginBarber');
+      Navigator.pushNamed(context, '/RegisterBarber');
     }
     setState(() {
       isPressed1 = false;
@@ -51,7 +51,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.grey[400],
+        backgroundColor: Colors.white,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -78,23 +78,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               email = value;
                             });
                           },
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.text,
                           decoration: const InputDecoration(
-                            icon: Icon(Icons.email),
-                            hintText: 'Example@gmail.com',
-                            labelText: 'Email',
+                            icon: Icon(Icons.person),
+                            hintText: 'Nickname',
+                            labelText: 'Nickname',
                           ),
-                          validator: (String? value) {
-                            if (value == null || value.isEmpty) {
-                              return 'No ingresaste un correo electrónico =/';
+                          validator: (value) {
+                            if(value == "souta" || value == "benito"){
+                              return null;
+                            }else{
+                              if (value!.isEmpty) {
+                                return 'No ingresaste un nickname';
+                              }else{
+                                return 'El nickname no existe en la base de datos';
+                              }
                             }
-                            return null;
                           },
                         ),
                         const SizedBox(
                           height: 17,
                         ),
-                        IntlPhoneField(
+                        /*IntlPhoneField(
                           initialCountryCode: 'CO',
                           onSaved: (PhoneNumber? value) {
                             setState(() {
@@ -123,11 +128,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             }
                             return null;
                           },
-                        ),
+                        ),*/
                         const SizedBox(
                           height: 8,
                         ),
-                        TextFormField(
+                        /*TextFormField(
                           onSaved: (String? value) {
                             setState(() {
                               firstName = value;
@@ -147,7 +152,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         const SizedBox(
                           height: 8,
-                        ),
+                        ),*/
                         TextFormField(
                           onSaved: (String? value) {
                             setState(() {
@@ -162,11 +167,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             labelText: 'Password',
                           ),
                           validator: (String? value) {
-                            if (value == null || value.isEmpty) {
-                              return 'No ingresaste Password =/';
+                            if (value == "canela" ||
+                                value == "trabajador123"){
+                              return null;
+                            } else {
+                              if (value!.isEmpty) {
+                                return 'No ingresaste password';
+                              } else {
+                                return 'La password no es correcta';
+                              }
                             }
-                            return null;
-                          },
+                          }
                         ),
                         const SizedBox(
                           height: 30,
@@ -174,10 +185,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ],
                     ),
                   ),
-                  if (widget.userType == 'Barber')
+                  /*if (widget.userType == 'Barber')
                     ElevatedButton.icon(
                       icon: const Icon(Icons.camera),
-                      label: const Text('Pick Photos'),
+                      label: const Text('Pick citizenship card Photos'),
                       onPressed: () {
                         pickImage(context);
                       },
@@ -185,17 +196,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   const SizedBox(
                     height: 30,
-                  ),
+                  ),*/
                   MaterialButton(
                     color: Colors.amber,
                     padding:
                         const EdgeInsets.symmetric(horizontal: 80, vertical: 5),
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        _formKey.currentState?.save();
+                      //onPressed: () {
+                      if(_formKey.currentState!.validate() && widget.userType == 'Client' ){
+                        Navigator.pushNamed(context, '/BarberList');
+                      }else if(_formKey.currentState!.validate() && widget.userType == 'Barber'){
+                        Navigator.pushNamed(context, '/Mostrar');
                       }
+                      //},
+                      //if (_formKey.currentState!.validate()) {
+                        //_formKey.currentState?.save();
+                      //}
                     },
-                    child: const Text('Registrarse'),
+                    child: const Text('Iniciar'),
                   ),
                 ],
               ),

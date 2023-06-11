@@ -20,7 +20,7 @@ Widget buildCard({String? path, String? selectedPath}) {
         if (path != null)
           ClipRect(
               child: Image(
-            image: NetworkImage(path),
+            image: AssetImage(path),
             height: 200,
             width: 200,
             fit: BoxFit.cover,
@@ -43,7 +43,7 @@ class _WorkerProfile extends State<WorkerProfile> {
           backgroundColor: Colors.black87,
           leading: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/LoginClient');
+              Navigator.pushNamed(context, '/BarberList');
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -62,15 +62,24 @@ class _WorkerProfile extends State<WorkerProfile> {
                 children: [
                   buildCard(
                       path:
-                          'https://images.unsplash.com/photo-1654789460791-74c79093c37e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+                      'Assets/corte1.png'),
                   const SizedBox(
                     width: 4,
                   ),
-                  buildCard(),
+                  buildCard(
+                      path:
+                      'Assets/corte2.png'
+                  ),
                   const SizedBox(width: 4),
-                  buildCard(),
+                  buildCard(
+                      path:
+                      'Assets/corte3.png'
+                  ),
                   const SizedBox(width: 4),
-                  buildCard(),
+                  buildCard(
+                      path:
+                      'Assets/corte4.png'
+                  ),
                   const SizedBox(width: 4)
                 ],
               ),
@@ -115,7 +124,7 @@ class _WorkerProfile extends State<WorkerProfile> {
                       height: 150,
                       width: 255,
                       child: const Text(
-                          'Agregar la descripcion recibida en el worker_form',
+                          'Soy un barbero de 25 años que busca crecer profesionalmente, veras mi trabajo en las fotos y el costo de lo que hago mas enseguida',
                           style: TextStyle(
                               fontSize: 16, fontFamily: 'CrimsonText')),
                     ),
@@ -139,7 +148,7 @@ class _WorkerProfile extends State<WorkerProfile> {
                             decoration:
                                 BoxDecoration(border: Border.all(width: 0.5)),
                             child: const Text(
-                                'Agregar los precios referenciados del worker_screen_form'))),
+                                'Bienvenido a green barber soy especialista en todo tipo de cortes de cabello. El precio al pagar sera de: 20.0000 COP'))),
                   ],
                 ),
             ),
@@ -164,7 +173,11 @@ class _WorkerProfile extends State<WorkerProfile> {
                   ),
                   InkWell(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+
+                          Navigator.pushNamed(context, '/PickDate');
+
+                      },
                       child: const Text(
                         'Pagar',
                         style: TextStyle(

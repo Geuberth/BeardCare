@@ -41,6 +41,8 @@ dependencies:
   sqflite: ^2.0.2+1
   http: ^0.13.4
   flutter_map: ^1.1.1
+  table_calendar: ^3.0.9
+  intl: ^0.18.1
 
 
 dev_dependencies:
@@ -75,6 +77,10 @@ flutter:
     - Assets/triangleLoading.gif
     - Assets/campLoad.gif
     - Assets/Pay_success.gif
+    - Assets/corte1.png
+    - Assets/corte2.png
+    - Assets/corte3.png
+    - Assets/corte4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
