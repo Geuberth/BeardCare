@@ -26,8 +26,7 @@ class _PaymentState extends State<Payment> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize =
-        MediaQuery.of(context).size; //setting the width of the device
+    var screenSize = MediaQuery.of(context).size; //setting the width of the device
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -75,7 +74,7 @@ class _PaymentState extends State<Payment> {
                 style: TextStyle(color: Colors.black87),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/SuccessPayment');
+                Navigator.pushNamed(context, '/PickDate');
               },
             ),
           )

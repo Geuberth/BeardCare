@@ -7,11 +7,14 @@ import 'package:beardcare/screens/choose_screen.dart';
 import 'package:beardcare/screens/register_screen.dart';
 import 'package:beardcare/screens/worker_form.dart';
 import 'package:beardcare/screens/worker_profile.dart';
+import 'package:beardcare/screens/mostrar_citas.dart';
+import 'package:beardcare/screens/pick_date.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp( const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.amber,
           //colorScheme: ColorScheme(primary: ,secondary: ,error: ,background: ,brightness: ,onPrimary: ,onSecondary: ,onSurface: ,onError: ),
         ),
-        initialRoute: '/',
+        initialRoute: '/Choose',
         routes: {
           '/WorkerProfile': (context) => const WorkerProfile(),
           '/PaymentMethods': (context) => const Payment(),
@@ -44,7 +47,9 @@ class MyApp extends StatelessWidget {
           '/Choose': (context) => const ChooseScreen(),
           '/BarberList': (context) => const BarberListPage(),
           '/WorkerForm': (context) => const WorkerFormPage(),
-          '/': (context) => const RegisterScreen(userType:'Barber'),
+          '/PickDate': (context) => const DatePickPage(),
+          '/Mostrar': (context) => const MostrarPage(),
+
         },
       ),
     );

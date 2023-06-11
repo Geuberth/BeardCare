@@ -33,7 +33,7 @@ class _SuccessState extends State<Success> {
                 style: TextStyle(color: Colors.black87,fontSize: 18),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/PaymentMethods');
+                Navigator.pushNamed(context, '/BarberList');
               },
             ),
           )

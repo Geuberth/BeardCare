@@ -19,6 +19,15 @@ class _BarberListPageState extends State<BarberListPage> {
           'Barber List',
           style: TextStyle(color: Colors.amber),
         ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/Choose');
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.amber,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -35,7 +44,7 @@ class _BarberListPageState extends State<BarberListPage> {
                           semanticContainer: true,
                           child: InkWell(
                             splashColor: Colors.amber.withAlpha(90),
-                            onTap: () {},
+                            onTap: () {Navigator.pushNamed(context, '/WorkerProfile');},
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -117,6 +126,9 @@ class _BarberListPageState extends State<BarberListPage> {
                     )),
           ),
           BottomNavigationBar(
+            onTap:(value) {
+              Navigator.pushNamed(context, '/Mostrar');
+            },
               backgroundColor: Colors.black87,
               selectedItemColor: Colors.amber,
               unselectedItemColor: Colors.white,
