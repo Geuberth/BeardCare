@@ -142,7 +142,7 @@ class _WorkerProfile extends State<WorkerProfile> {
                   children: [
                     Expanded(
                         child: Container(
-                          height: 350,
+                          height: 300,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 7, vertical: 5),
                             decoration:
@@ -155,8 +155,8 @@ class _WorkerProfile extends State<WorkerProfile> {
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                //mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   InkWell(
                     child: TextButton(

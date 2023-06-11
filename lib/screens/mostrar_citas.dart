@@ -43,7 +43,7 @@ class _MostrarPageState extends State<MostrarPage> {
             alignment: Alignment.center,
             padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(color: Colors.amber,borderRadius: BorderRadius.circular(20)),
-            child: const Text("La cita es para: 11-JUNIO-2023 12:00 PM"),
+            child: const Text("La cita es para: 16-JUNIO-2023 12:00 PM"),
           ),
         ],
       ),
